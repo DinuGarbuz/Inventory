@@ -1,0 +1,15 @@
+<div *ngIf ="itemIsFound">
+    <p>Item information</p>
+    <p><b>Id:</b><i>{{item.id}}</i></p>
+    <p><b>Name:</b><i>{{item.name}}</i></p>
+    <p><b>Description:</b><i>{{item.description}}</i></p>
+    <p><b>User:</b><i>{{item.user}}</i></p>
+    <p><b>Location:</b><i>{{item.location}}</i></p>
+    <p><b>Inventory NUmber:</b><i>{{item.inventoryNumber}}</i></p>
+    <p><b>Created At:</b><i>{{item.createdAt}}</i></p>
+    <p><b>Modified At:</b><i>{{item.modifiedAt}}</i></p>
+    <p><b>Status:</b><i>{{item.active}}</i></p>
+</div>>
+<div *ngIf ="!itemIsFound">
+    Item not found!
+</div>

@@ -1,0 +1,54 @@
+.form-div {
+  display: grid;
+  grid-template-columns: 140px 200px;
+  grid-template-areas: "theText theInput";
+  margin-bottom: 15px;
+}
+
+.form-div-text {
+  grid-area: theText;
+}
+
+.form-div-input {
+  grid-area: theInput;
+}
+
+.column {
+  flex: 50%;
+  padding: 20px;
+  
+}
+
+.row{
+  display: flex;
+  margin-left: 190px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.QRcentered{
+  position: relative;
+  top: 50%;
+  left: 50%;
+  margin-top: -330px;
+  margin-left: -700px;
+}
+
+#title{
+  font-size: 20px;
+
+}
+
+.mainDiv{
+  background-image: linear-gradient(rgba(252, 252, 252, 0.8), rgba(252, 252, 252, 0.1)), url("../../../assets/images/inventory.jpg");
+
+  /* Set a specific height */
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
+  
+}

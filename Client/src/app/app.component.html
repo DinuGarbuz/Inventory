@@ -1,0 +1,20 @@
+<html >
+
+<head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<div class="sidebar">
+  <a class="active" href="#" routerLink = ""><i class="fa fa-fw fa-home"></i>Home</a>
+  <a routerLink = "/inventory"><i class="fa fa-fw fa-wrench"></i>Inventory</a>
+  <a routerLink = "/scan"><i class="fa fa-fw fa-qrcode"></i>Scan</a>
+  <a routerLink = "/add-item"><i class="fa fa-fw fa-plus"></i>AddItem</a>
+  <a routerLink = "/contact"><i class="fa fa-fw fa-envelope"></i>Contact</a>
+  
+</div>
+<router-outlet></router-outlet>
+<router-outlet name="print"></router-outlet>
+
+</html>

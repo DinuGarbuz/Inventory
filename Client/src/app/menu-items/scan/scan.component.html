@@ -1,0 +1,79 @@
+<div class="row">
+    <div class="centered">
+        <div class="camera">
+            <zxing-scanner
+                [torch]="tourchEnable"
+                [tryHarder]="tryHarder"
+                [(device)]="currentDevice"
+                [formats]= "formats"
+                (permissionResponse)="onHasPermission($event)"
+                (camerasFound)="onCamerasFound($event)"
+                (scanSuccess)="onScanSuccess($event)"
+                
+            >
+                
+            </zxing-scanner>
+            <div class="note">
+               <p>Note:</p>
+               <p>You can scan a qr code and edit a item! </p>
+               <p>If item don't exist, you can add it! </p>
+                
+            </div>
+        
+        </div>
+        <div class="scan">
+
+        </div>
+    </div>
+    <div class="column">
+<form  [formGroup]="addItemForm" [hidden]="isDisplayed" (ngSubmit)="onSubmit()">
+    <p>
+        <mat-form-field appearance="outline">
+            <mat-label>Item Name</mat-label>
+            <input matInput type="text" class="form-div-input" placeholder="Ex: My Item" formControlName="name">
+            <mat-error *ngIf="hasError('user','required')">User required</mat-error>
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field appearance="outline">
+            <mat-label>Description</mat-label>
+            <textarea matInput class="form-div-input" placeholder="Ex: Model no"
+                formControlName="description"></textarea>
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field appearance="outline">
+            <mat-label>User</mat-label>
+            <input matInput type="text" placeholder="John Doe" class="form-div-input" formControlName="user">
+            <mat-error *ngIf="hasError('user','required')">User required</mat-error>
+        </mat-form-field>
+    </p>
+    <p>
+
+
+        <mat-form-field appearance="outline">
+            <mat-label>Location</mat-label>
+            <input matInput type="text" class="form-div-input" formControlName="location">
+            <mat-error *ngIf="hasError('location','required')">Location required required</mat-error>
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field appearance="outline">
+            <mat-label>Inventory number</mat-label>
+            <input matInput type="number" class="form-div-input" placeholder="Ex:1234566"
+                formControlName="inventoryNumber">
+            <mat-error *ngIf="hasError('inventoryNumber','required')">Inventory number required</mat-error>
+        </mat-form-field>
+    </p>
+
+    <p>
+        <button mat-raised-button type="submit" [disabled]="!addItemForm.valid">Add item</button>
+    </p>
+</form>
+</div>
+</div>
+
+
+
+
+

@@ -1,0 +1,64 @@
+<div class="mainDiv">
+<div class="row">
+    <div class="column">
+        <p id="title">Item:</p>
+<form  [formGroup]="addItemForm" (ngSubmit)="onSubmit()">
+    <p>
+        <mat-form-field appearance="outline">
+            <mat-label>Item Name</mat-label>
+            <input matInput type="text" class="form-div-input" placeholder="Ex: My Item" formControlName="name">
+            <mat-error *ngIf="hasError('user','required')">User required</mat-error>
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field appearance="outline">
+            <mat-label>Description</mat-label>
+            <textarea matInput class="form-div-input" placeholder="Ex: Model no"
+                formControlName="description"></textarea>
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field appearance="outline">
+            <mat-label>User</mat-label>
+            <input matInput type="text" placeholder="John Doe" class="form-div-input" formControlName="user">
+            <mat-error *ngIf="hasError('user','required')">User required</mat-error>
+        </mat-form-field>
+    </p>
+    <p>
+
+
+        <mat-form-field appearance="outline">
+            <mat-label>Location</mat-label>
+            <input matInput type="text" class="form-div-input" formControlName="location">
+            <mat-error *ngIf="hasError('location','required')">Location required required</mat-error>
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field appearance="outline">
+            <mat-label>Inventory number</mat-label>
+            <input matInput type="number" class="form-div-input" placeholder="Ex:1234566"
+                formControlName="inventoryNumber">
+            <mat-error *ngIf="hasError('inventoryNumber','required')">Inventory number required</mat-error>
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field appearance="outline">
+            <mat-label>Created At</mat-label>
+            <input matInput type="date" class="form-div-input" formControlName="createdAt">
+            <mat-error *ngIf="hasError('createdAt','required')">Created At Date required</mat-error>
+        </mat-form-field>
+    </p>
+    <p>
+        <button mat-raised-button type="submit" [disabled]="!addItemForm.valid">Submit</button>
+    </p>
+</form>
+</div>
+<div class="column">
+    <div class="QRcentered" *ngIf="itemId">
+        <p id="title">Item QR code:</p>
+    <qrcode [qrdata]="jsonString" [size]="256" [level]="'M'" ></qrcode>
+</div>
+
+</div>
+</div>
+</div>
